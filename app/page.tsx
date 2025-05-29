@@ -1,103 +1,220 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Head from 'next/head';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [mounted, setMounted] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  useEffect(() => {
+    setMounted(true); // ensures video only renders on client
+  }, []);
+
+  return (
+    <>
+      <Head>
+        <title>R. P. Laurain & Associates</title>
+        <meta
+          name="description"
+          content="Professional real estate appraisal services by R. P. Laurain & Associates Inc."
+        />
+      </Head>
+
+      <div className="home-three">
+        {/* HERO SECTION */}
+        <section className="hero-section">
+          {mounted && (
+            <video
+              className="hero-section__video"
+              muted
+              autoPlay
+              loop
+              playsInline
+            >
+              <source src="/assets/backgroundvideo.MP4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+
+          <div className="hero-section__overlay">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/assets/logotransparent 1.png"
+              alt="Company Logo"
+              className="hero-section__logo"
+              width={200}
+              height={100}
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+            <div className="hero-section__top-bar">
+              <div className="hero-section__main-text">
+                <h1 className="hero-section__company-name">
+                  R. P. LAURAIN <br /> & ASSOCIATES
+                </h1>
+                <p className="hero-section__incorporated">INCORPORATED</p>
+                <p className="hero-section__tagline">
+                  APPRAISERS - ANALYSTS - CONSULTANTS
+                </p>
+              </div>
+            </div>
+
+            <div className="hero-section__services-form">
+              <div className="services-row">
+                <div className="service-item">
+                  Single/Multiple
+                  <br />
+                  Family Residential
+                </div>
+                <div className="service-item">
+                  Commercial
+                  <br />
+                  Industrial
+                </div>
+                <div className="service-item">
+                  <div className="service-item-vacant">Vacant Land</div>
+                </div>
+                <div className="service-item">
+                  Eminent Domain
+                  <br />
+                  Appraisals
+                </div>
+                <div className="service-item">
+                  Open Space
+                  <br />
+                  Conservation
+                </div>
+                <div className="service-item">
+                  <div className="service-item-marinas">Marinas</div>
+                </div>
+                <div className="service-item">
+                  <div className="service-item-airports">Airports</div>
+                </div>
+                <div className="service-item">
+                  <div className="service-item-ports">Ports</div>
+                </div>
+                <div className="service-item">
+                  Special Purpose
+                  <br />
+                  Properties
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ABOUT SECTION */}
+        <section className="about-section container-xs">
+          <div className="main__midsection__row_three">
+            <div className="about-section__info">
+              <div className="about-section__text">
+                <p>
+                  R. P. Laurain & Associates, Inc. was established in January
+                  1969 for the purpose of providing professional real estate
+                  appraisal services. The company was incorporated in 1979. R.
+                  P. Laurain & Associates is a full-service appraisal firm with
+                  experience appraising single and multi-family residential,
+                  commercial, industrial, vacant land, eminent domain
+                  appraisals, open space/conservation, marinas, ports, airports,
+                  and special purpose properties.
+                  <br />
+                  <br />
+                  The Principal and Senior Appraisers of the firm are Certified
+                  General Appraisers in the State of California, also holding
+                  the MAI Designation from the Appraisal Institute. The
+                  Principal and Senior Appraisers are supported by associate
+                  appraiser, market research, and office staff.
+                </p>
+              </div>
+              <div className="about-section__address-box">
+                <div className="address-content">
+                  <p className="about-section__address">
+                    <span className="address-line">
+                      3353 LINDEN AVENUE, SUITE 200
+                    </span>
+                    <br />
+                    <span className="address-line">LONG BEACH, CA 90807</span>
+                    <br />
+                    <span className="address-line">
+                      TELEPHONE: (562) 426-0477
+                    </span>
+                    <br />
+                    <span className="address-line">
+                      FACSIMILE: (562) 988-2927
+                    </span>
+                    <br />
+                    <span className="address-line">
+                      EMAIL: RPLA@RPLAURAIN.COM
+                    </span>
+                    <br />
+                    <span className="address-line">
+                      HOURS: M-F 8 AM - 5 PM (PST)
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* GALLERY SECTION */}
+        <section className="gallery-section">
+          <div className="gallery-section__images">
+            <div className="gallery-section__left-image">
+              <Image
+                src="/assets/gallerycommercial.png"
+                alt="Large Left"
+                width={800}
+                height={800}
+              />
+            </div>
+            <div className="gallery-section__column">
+              <Image
+                src="/assets/gallerymarina.png"
+                alt="Right Top"
+                width={400}
+                height={400}
+              />
+              <Image
+                src="/assets/galleryplane.JPEG"
+                alt="Right Bottom"
+                width={400}
+                height={400}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* CLIENT OVERVIEW */}
+        <section className="client-overview container-xs">
+          <div className="main__midsection__row_three">
+            <h2 className="client-overview__title">Client Overview</h2>
+            <p className="client-overview__description">
+              Our primary client base consists of city, county, state and
+              federal governmental agencies, inclusive of transit authorities,
+              port authorities, airports, quasi-public utility companies,
+              conservation agencies. Other clients include right-of-way
+              acquisition companies, law firms specializing in eminent domain
+              matters, estate attorneys, private developers, accountants,
+              lending institutions, and individuals.
+              <br />
+              <br />
+              Real estate appraisal and valuation consultation services
+              conducted for public purposes include eminent domain studies,
+              street and freeway widening, bridge, grade separation, tunnel,
+              subway, railroad, utility corridor, flood control and related
+              projects; partial acquisition and easement valuations; complex
+              severance damage and benefits studies; leasing/rental of
+              publicly-owned properties; public school, college, and university
+              expansion projects; relocation studies; housing and public loan
+              programs; Navy housing; senior housing public bond measures;
+              special purpose properties; Quimby Act park fee studies; Fair
+              Political Practices Commission analyses; budgetary studies; and
+              transfers (exchanges) of properties between public agencies.
+            </p>
+          </div>
+        </section>
+      </div>
+    </>
   );
 }

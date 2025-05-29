@@ -1,0 +1,19 @@
+/* variables.css */
+:root {
+    /*----Color variables----*/
+    --black_900: #000000;
+    --gray_900: #1e1e1e;
+    --gray_900_01: #232323;
+    --gray_900_b2: #1e1e1eb2; 
+    --white_a700: #ffffff;
+  
+    /*----Border radius variables----*/
+    --radius-xs: 6px;
+    --radius-sm: 14px;
+    --radius-md: 24px;
+  
+    /* These spacing variables aren't used anywhere */
+    --space-xs: 34px;
+    --space-sm: 68px;
+  }
+  

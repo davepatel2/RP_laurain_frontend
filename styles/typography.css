@@ -1,0 +1,24 @@
+/* typography.css */
+
+
+/* Default text color/family from Dhi */
+.ui.text {
+  color: var(--white_a700);
+  font-family: "Times New Roman";
+}
+
+/* Heading sizing */
+.ui.heading {
+  color: var(--white_a700);
+  font-family: Verdana, sans-serif;
+}
+
+/* Container helper from Dhi */
+
+.container-xs {
+  max-width: 1842px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
