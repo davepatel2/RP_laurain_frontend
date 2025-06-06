@@ -3,12 +3,13 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true); // ensures video only renders on client
+    setMounted(true);
   }, []);
 
   return (
@@ -24,18 +25,20 @@ export default function Home() {
       <div className="home-three">
         {/* HERO SECTION */}
         <section className="hero-section">
-          {mounted && (
-            <video
-              className="hero-section__video"
-              muted
-              autoPlay
-              loop
-              playsInline
-            >
-              <source src="/assets/backgroundvideo.MP4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
+          <div suppressHydrationWarning>
+            {mounted && (
+              <video
+                className="hero-section__video"
+                muted
+                autoPlay
+                loop
+                playsInline
+              >
+                <source src="/assets/backgroundvideo.MP4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+          </div>
 
           <div className="hero-section__overlay">
             <Image
@@ -59,47 +62,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-section__services-form">
-              <div className="services-row">
-                <div className="service-item">
-                  Single/Multiple
-                  <br />
-                  Family Residential
-                </div>
-                <div className="service-item">
-                  Commercial
-                  <br />
-                  Industrial
-                </div>
-                <div className="service-item">
-                  <div className="service-item-vacant">Vacant Land</div>
-                </div>
-                <div className="service-item">
-                  Eminent Domain
-                  <br />
-                  Appraisals
-                </div>
-                <div className="service-item">
-                  Open Space
-                  <br />
-                  Conservation
-                </div>
-                <div className="service-item">
-                  <div className="service-item-marinas">Marinas</div>
-                </div>
-                <div className="service-item">
-                  <div className="service-item-airports">Airports</div>
-                </div>
-                <div className="service-item">
-                  <div className="service-item-ports">Ports</div>
-                </div>
-                <div className="service-item">
-                  Special Purpose
-                  <br />
-                  Properties
-                </div>
-              </div>
-            </div>
+            {/* ✅ Replaced nav links with component */}
+            <Navbar />
           </div>
         </section>
 
