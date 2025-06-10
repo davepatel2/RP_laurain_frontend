@@ -25,7 +25,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height:fit-content; /* <--- Increase this if you want it taller. */
+  height:75vh; /* <--- Increase this if you want it taller. */
   background-color: var(--black_900);
   overflow: hidden;
   margin-bottom: 20px; /* space under the hero before the next section */
@@ -50,11 +50,11 @@
   top: 0; 
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100; /*CHANGED THIS FROM 100 TO 70*/
   object-fit: cover;
   opacity: 0.69;
   display: block;
-  border-radius: var(--radius-md);
+  transition: height .4s ease-in-out;
 }
 
 .hero-section__video::-webkit-media-controls {
@@ -65,20 +65,21 @@
 /* The overlay is a full layer on top, 
     giving us a flex container for top text & bottom services. */
 .hero-section__overlay {
-  position: relative; /* so child absolute items pin within this overlay */
-  z-index: 1;
+  position: absolute; /* so child absolute items pin within this overlay */
+  inset: 0;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* top content at top, services at bottom */
   align-items: center;
-  height: 100%; /* fill entire hero section */
+  
 }
 
 /* LOGO pinned top-left inside the hero (above the overlay, to ensure overlap). */
 .hero-section__logo {
   position: absolute;
   top: 20px;
-  right: 20px;
+  left: 20px;
   height: 100px;
   width: auto;
   object-fit: contain;
@@ -142,7 +143,7 @@
   border-radius: var(--radius-md);
   margin-left: 182px; 
   margin-right: 182px; 
-  margin-top: 200px; /* space above bottom edge of the hero */
+  margin-top: 0px; /* space above bottom edge of the hero */
   display: flex;
   flex-direction: column;
   
@@ -232,7 +233,6 @@
   padding-left: 56px; 
   padding-right: 56px; 
   background-color: var(--gray_900); 
-  border-radius: var(--radius-md);
   padding-top: 30px; /* Add padding to top */
   @media only screen and (max-width: 1050px) {
       padding-left: 20px; 
@@ -247,22 +247,13 @@
 
 .about-section {
   background-color: var(--gray_900);
-  border-radius: var(--radius-md);
-  margin-top: 34px;
   min-height: 500px;
   padding: 20px;
   color: var(--white_a700);
   text-align: center;
+  
 }
 
-/*.about-us__title {
-  font-size: 45px;
-  font-family: 'Times New Roman', serif;
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: -50px;
-  letter-spacing: 5px;
-}*/
 
 .about-section__info {
   display: flex;
@@ -284,7 +275,7 @@
 
 .about-section__address-box {
   background-color: var(--gray_900_01);
-  border-radius: var(--radius-md);
+  
   width: 42%;
   display: flex;
   justify-content: center;
@@ -342,65 +333,92 @@
   }
 }
 
-/*-------------------------------------
-  4) GALLERY SECTION (unchanged)
+ /*-------------------------------------
+-  4) GALLERY SECTION (unchanged)
++  4) GALLERY / SWIPER CAROUSEL
 --------------------------------------*/
-/* GALLERY SECTION (replace these rules in home.css) */
-.gallery-section {
-  /* Fill the full width for a larger gallery display */
-  width: 100%;
-  margin-top: 40px;
+.gallery-carousel {
+  max-width: 800px;    /* or bump up/down to taste */
+  margin: 60px auto;
 }
 
-.gallery-section__images {
+.slide-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio → change this if you want taller/shorter */
+  
+  overflow: hidden;
+}
+
+.gallery-carousel {
+  position: relative;        /* allow overflow */
+  overflow: visible;         /* show arrows outside the frame */
+  max-width: 800px;
+  margin: 60px auto;         /* space above & below */
+}
+
+/* make the swiper container itself visible beyond its bounds */
+.gallery-carousel .swiper {
+  overflow: visible;
+}
+
+/* ARROWS */
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  width: 48px;
+  height: 48px;
+  background: rgba(197, 162, 110, 0.85); /* your gold accent with opacity */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform .2s ease, background .2s ease;
+  z-index: 10;
+}
+
+.swiper-button-prev { left: -24px; }
+.swiper-button-next { right: -24px; }
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* hover/focus states for button affordance */
+.swiper-button-prev:hover,
+.swiper-button-next:hover,
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+  background: rgba(197, 162, 110, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* DOTS — move them below the swiper */
+.swiper-pagination {
+  position: relative !important;
+  bottom: auto !important;
+  margin-top: 16px;
   display: flex;
-  padding-left: 100px;
-  padding-right: 100px;
-  gap: 40px;
   justify-content: center;
-  align-items: stretch; /* Change from flex-start to stretch */
-  height: 100%;
 }
 
-/* Left image (the big one) – take up more horizontal space */
-.gallery-section__left-image {
-  display: flex;
-  height: 100%;
+/* make the bullets bigger and spaced */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: rgba(255,255,255,0.5);
+  transition: all .2s ease;
 }
 
-.gallery-section__left-image img {
-  width: 100%;
-  height: 100%;
-  max-height: 800px; /* Add max-height to match right column */
-  min-height: 760px;
-  border-radius: var(--radius-sm);
-  object-fit: cover;
-  @media (max-width: 1250px) {
-    width: 100%;
-    height: auto;
-  }
+.swiper-pagination-bullet-active {
+  width: 16px;
+  height: 16px;
+  background: #fff;
 }
 
-/* Right column with 2 stacked images */
-.gallery-section__column {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  height: 100%;
-  justify-content: space-between; /* This will push the bottom image down */
-}
-
-.gallery-section__column img {
-  width: auto;
-  max-width: 1000px;
-  height: calc((800px - 40px) / 2); /* Half of left image height minus gap */
-  border-radius: var(--radius-sm);
-  object-fit: cover;
-  @media (max-width: 1250px) {
-    width: 100%;
-    height: auto;
-  }
-}
 
 
 /*-------------------------------------
@@ -431,29 +449,4 @@
   @media (max-width: 1150px) {
     font-size: 20px;
   }
-}
-
-/*-------------------------------------
-  6) PARTNERS SECTION (unchanged)
---------------------------------------*/
-.partners-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 70px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-
-.partner-logo {
-  width: 100px;
-  height: auto;
-  object-fit: contain;
-}
-
-.address-line {
-  display: inline-block;
-  min-width: 100%;
-  text-align: center;
 }

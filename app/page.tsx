@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import Navbar from './components/Navbar';
+import GalleryCarousel from './components/GalleryCarousel'; // adjust path if needed
+
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -122,32 +124,8 @@ export default function Home() {
         </section>
 
         {/* GALLERY SECTION */}
-        <section className="gallery-section">
-          <div className="gallery-section__images">
-            <div className="gallery-section__left-image">
-              <Image
-                src="/assets/gallerycommercial.png"
-                alt="Large Left"
-                width={800}
-                height={800}
-              />
-            </div>
-            <div className="gallery-section__column">
-              <Image
-                src="/assets/gallerymarina.png"
-                alt="Right Top"
-                width={400}
-                height={400}
-              />
-              <Image
-                src="/assets/galleryplane.JPEG"
-                alt="Right Bottom"
-                width={400}
-                height={400}
-              />
-            </div>
-          </div>
-        </section>
+        <GalleryCarousel />
+        
 
         {/* CLIENT OVERVIEW */}
         <section className="client-overview container-xs">

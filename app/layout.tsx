@@ -3,6 +3,7 @@ import '../styles/variables.css';
 import '../styles/typography.css';
 import '../styles/home.css';
 
+
 import type { ReactNode } from 'react';
 
 export const metadata = {
