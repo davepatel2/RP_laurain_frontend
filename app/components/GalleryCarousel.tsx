@@ -1,48 +1,61 @@
-'use client';                     //  needed because Swiper touches the DOM
+// components/ServicesCarousel.jsx
+'use client';
 
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import styles from '../../styles/Carousel.module.css';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
-// Put every gallery image you want to show here.
-// They live in /public/assets so we can reference them by URL only.
 const slides = [
-  { src: '/assets/gallerycommercial.png', alt: 'Cold-storage facility' },
-  { src: '/assets/gallerymarina.png',      alt: 'Marina' },
-  { src: '/assets/galleryplane.jpeg',      alt: 'Private-jet hangar' },
+  {
+    src: '/assets/gallerycommercial.png',
+    alt: 'Commercial',
+    link: '/services',
+  },
+  {
+    src: '/assets/gallerymarina.png',
+    alt: 'Marina',
+    link: '/services',
+  },
 ];
 
-export default function GalleryCarousel() {
+export default function ServicesCarousel() {
+  const [index, setIndex] = useState(0);
+  const router = useRouter();
+
+  const nextSlide = () => {
+    setIndex((index + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setIndex((index - 1 + slides.length) % slides.length);
+  };
+
+  const handleClick = (link: string) => {
+    router.push(link);
+  };
+
   return (
-    <section className="gallery-carousel">
-      <Swiper
-        modules={[Navigation, Pagination]}
-        slidesPerView={1}
-        loop
-        navigation          // adds ‹   › arrows
-        pagination={{ clickable: true }}
-        spaceBetween={30}
-      >
-        {slides.map(({ src, alt }) => (
-          <SwiperSlide key={src}>
-            {/* ⭐ Keeps a 16:9 box that scales. Change padding-top for another ratio. */}
-            <div className="slide-wrapper">
-              <Image
-                src={src}
-                alt={alt}
-                fill
-                sizes="100vw"
-                style={{ objectFit: 'cover' }}
-                priority
-              />
-            </div>
-          </SwiperSlide>
+    <div className={styles.carousel}>
+      <button className={styles.leftControl} onClick={prevSlide}>
+        ‹
+      </button>
+
+      <div className={styles.slideWrapper}>
+        {slides.map((slide, i) => (
+          <img
+            key={i}
+            src={slide.src}
+            alt={slide.alt}
+            className={`${styles.slide} ${i === index ? styles.active : ''}`}
+            onClick={() => handleClick(slide.link)}
+          />
         ))}
-      </Swiper>
-    </section>
+      </div>
+
+      <button className={styles.rightControl} onClick={nextSlide}>
+        ›
+      </button>
+    </div>
   );
 }

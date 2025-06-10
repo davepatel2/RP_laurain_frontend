@@ -7,13 +7,14 @@ export default function AboutPage() {
   return (
     <div className="home-three">
       <section className="hero-section">
-        <div className="hero-section__video">
-          <Image
+      <div className="hero-section__image">
+        <Image
             src="/assets/gallerymarina.png"
-            alt="Hero"
+            alt="Services Header"
             fill
             style={{ objectFit: 'cover' }}
-          />
+            priority
+        />
         </div>
 
         <div className="hero-section__overlay">
