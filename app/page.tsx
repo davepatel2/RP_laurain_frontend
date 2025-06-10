@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import Navbar from './components/Navbar';
-import GalleryCarousel from './components/GalleryCarousel'; // adjust path if needed
+import ServicesCarousel from './components/GalleryCarousel'; // adjust path if needed
 
 
 export default function Home() {
@@ -92,39 +92,19 @@ export default function Home() {
                   appraiser, market research, and office staff.
                 </p>
               </div>
-              <div className="about-section__address-box">
-                <div className="address-content">
-                  <p className="about-section__address">
-                    <span className="address-line">
-                      3353 LINDEN AVENUE, SUITE 200
-                    </span>
-                    <br />
-                    <span className="address-line">LONG BEACH, CA 90807</span>
-                    <br />
-                    <span className="address-line">
-                      TELEPHONE: (562) 426-0477
-                    </span>
-                    <br />
-                    <span className="address-line">
-                      FACSIMILE: (562) 988-2927
-                    </span>
-                    <br />
-                    <span className="address-line">
-                      EMAIL: RPLA@RPLAURAIN.COM
-                    </span>
-                    <br />
-                    <span className="address-line">
-                      HOURS: M-F 8 AM - 5 PM (PST)
-                    </span>
-                  </p>
-                </div>
+              <div className="about-section__image-box">
+                <img
+                  src="/assets/galleryplane.JPEG"
+                  alt="About us"
+                  className="about-section__image"
+                />
               </div>
             </div>
           </div>
         </section>
 
         {/* GALLERY SECTION */}
-        <GalleryCarousel />
+        <ServicesCarousel />
         
 
         {/* CLIENT OVERVIEW */}

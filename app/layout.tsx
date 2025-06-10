@@ -17,10 +17,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
+        <body suppressHydrationWarning={true}>
           {children}
         </body>
       </html>
     </ClerkProvider>
   )
-}
+};
+
