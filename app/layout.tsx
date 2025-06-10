@@ -1,24 +1,26 @@
-import '../styles/reset.css';
-import '../styles/variables.css';
-import '../styles/typography.css';
-import '../styles/home.css';
+// app/layout.tsx
+import '../styles/reset.css'
+import '../styles/variables.css'
+import '../styles/typography.css'
+import '../styles/home.css'
+import '../styles/auth.css'      // if you added auth.css
 
-
-import type { ReactNode } from 'react';
+import { ClerkProvider } from '@clerk/nextjs'
+import type { ReactNode } from 'react'
 
 export const metadata = {
-  title: 'R. P. Laurain & Associates',
-  description: 'Professional real estate appraisal services',
-};
+  title: "RP Laurain Next",
+  description: "Your site with Clerk authentication",
+}
 
-type RootLayoutProps = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
+  )
 }
