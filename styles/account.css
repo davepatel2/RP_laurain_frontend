@@ -1,0 +1,107 @@
+/* styles/account.css */
+.account-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
+    
+  }
+  
+  /* and for your list of reports: */
+  .report-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .report-item {
+    background: var(--gray_800);
+    padding: 12px;
+    border-radius: var(--radius-xs);
+    margin-bottom: 12px;
+  }
+  
+  .report-item h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+  }
+  
+  .report-item time {
+    font-size: 14px;
+    color: var(--gray_400);
+  }
+  
+  .report-item a {
+    font-weight: bold;
+    margin-top: 6px;
+    display: inline-block;
+    color: var(--gold_500);
+  }
+  
+  /* Container & Heading */
+.account-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--white_a700);
+  background-color: var(--gray_900);
+  border-radius: var(--radius-md);
+  
+}
+
+/* “No reports” message */
+.no-reports {
+  text-align: center;
+  color: var(--gray_400);
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+/* Grid of cards */
+.report-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Individual card */
+.report-item {
+  background: var(--gray_800);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Title & date */
+.report-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: var(--white_a700);
+}
+
+.report-date {
+  font-size: 0.875rem;
+  color: var(--gray_400);
+  margin-bottom: 1rem;
+}
+
+/* “View Report” button */
+.btn-report {
+  align-self: flex-start;
+  background-color: var(--gold_500);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-report:hover {
+  background-color: var(--gold_600);
+}

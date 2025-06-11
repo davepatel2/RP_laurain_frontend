@@ -12,7 +12,7 @@ export default function Navbar() {
         <Link href="/"       className="service-item">Home</Link>
         <Link href="/about"  className="service-item">About Us</Link>
         <Link href="/services" className="service-item">Services</Link>
-        <Link href="/clients"  className="service-item">Contact</Link>
+        <Link href="/contact"  className="service-item">Contact</Link>
 
         {isSignedIn ? (
           <>

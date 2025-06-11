@@ -1,0 +1,25 @@
+/* styles/contact.css */
+.contact-section {
+    background-color: var(--gray_900);
+    padding: 60px 16px;
+  }
+  
+  .contact-details {
+    font-family: Verdana, sans-serif;
+    color: var(--white_a700);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-details p {
+    margin: 8px 0;
+  }
+  
+  .contact-link {
+    color: var(--gold_500);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

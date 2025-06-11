@@ -1,6 +1,5 @@
 // app/account/layout.tsx
 import Navbar from '../components/Navbar';
-import styles from './account.module.css';
 
 export const metadata = {
   title: 'My Account – RP Laurain',
