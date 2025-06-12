@@ -39,69 +39,63 @@ Industrial property appraisals have included warehouses, light and heavy manufac
     title: 'Eminent Domain Appraisals',
     content: `Eminent domain appraisals require a special understanding of specific valuation methods and applicable State and Federal law as to the appropriate methods to be utilized in the appraisal process. This firm has extensive experience in both full and partial acquisition appraisal studies having worked with numerous public agencies, eminent domain attorneys, acquisition companies, engineering firms, and private property owners. This firm has been involved in eminent domain appraisal studies throughout Southern California for over 50 years, with a deep understanding of the appropriate methodologies to be utilized in a variety of eminent domain appraisal scenarios, and a strong knowledge of State and Federal Eminent Domain Code sections, case law, and applicable judicial precedents.
 
-Whether small single parcel acquisitions, or large 100+ multi-parcel acquisition projects such as freeway widenings, work on the California High Speed Rail in Central and Southern California, public school sites, utility corridors, mass transit subway projects, park expansion projects, bridge projects, etc., R.P. Laurain & Associates has the resources and experience to assist public agencies throughout the appraisal, review, and acquisition process, inclusive of expert witness testimony.
+    Whether small single parcel acquisitions, or large 100+ multi-parcel acquisition projects such as freeway widenings, work on the California High Speed Rail in Central and Southern California, public school sites, utility corridors, mass transit subway projects, park expansion projects, bridge projects, etc., R.P. Laurain & Associates has the resources and experience to assist public agencies throughout the appraisal, review, and acquisition process, inclusive of expert witness testimony.
 
-Our areas of special expertise include, but are not limited to:
+    Our areas of special expertise include, but are not limited to:
 
-Full Acquisition Analysis
-Residential, Commercial, Industrial
-Vacant land, Soil Contaminated Sites,
-Special Use, Non-Profit, Governmental,
-Remnant Land, Underlying Fee in Public Streets
-Encumbered Land, Mitigation/Open Space, etc.
-Partial Acquisition Analysis
-Valuation as Part of the Whole
-Valuation After the Taking
-Cost-to-Cure and Mitigation Studies
-Severance Damage Studies
-Compensable vs. Non-Compensable Items
-Benefit studies
-Easement Valuations
-Street, Highway, Freeway
-Access Denial Rights
-Surface rights
-Exclusive and Non-exclusive use
-Subsurface (pipeline, utility, drainage)
-Deep Tunnel Easements and Studies
-Drainage, storm drain, flood control
-Aerial and Avigation
-Temporary and Permanent Tieback
-Battered Piling
-De-watering wells
-Temporary Construction Easements
-Uneconomic Remainder Parcels
-Railroad and Corridor Valuations
-Transverse and Longitudinal Takings
-Nominal Underlying Fee in Public ROW
-Coordination with FF&E and Goodwill Appraisers
-Conservation and Mitigation Land Exchanges
-Inverse Condemnation
-Tenant Leasehold Studies`,
-    imagePath: '/assets/backgroundbridge.png',
-  },
-  {
-    id: 'uasfla',
-    title: 'UASFLA (Yellow Book)',
-    content: ``, // Content to be added later
+    Full Acquisition Analysis
+    Residential, Commercial, Industrial
+    Vacant land, Soil Contaminated Sites,
+    Special Use, Non-Profit, Governmental,
+    Remnant Land, Underlying Fee in Public Streets
+    Encumbered Land, Mitigation/Open Space, etc.
+    Partial Acquisition Analysis
+    Valuation as Part of the Whole
+    Valuation After the Taking
+    Cost-to-Cure and Mitigation Studies
+    Severance Damage Studies
+    Compensable vs. Non-Compensable Items
+    Benefit studies
+    Easement Valuations
+    Street, Highway, Freeway
+    Access Denial Rights
+    Surface rights
+    Exclusive and Non-exclusive use
+    Subsurface (pipeline, utility, drainage)
+    Deep Tunnel Easements and Studies
+    Drainage, storm drain, flood control
+    Aerial and Avigation
+    Temporary and Permanent Tieback
+    Battered Piling
+    De-watering wells
+    Temporary Construction Easements
+    Uneconomic Remainder Parcels
+    Railroad and Corridor Valuations
+    Transverse and Longitudinal Takings
+    Nominal Underlying Fee in Public ROW
+    Coordination with FF&E and Goodwill Appraisers
+    Conservation and Mitigation Land Exchanges
+    Inverse Condemnation
+    Tenant Leasehold Studies`,
     imagePath: '/assets/backgroundbridge.png',
   },
   {
     id: 'port-appraisals',
     title: 'Port Appraisals',
     content: `For over 35 years, one of the areas of specialized expertise has included the appraisal of various international seaport and marine related properties, primarily along the West Coast, but involving port surveys across the United States. Appraisal studies of shipping industry terminal uses have included container, automobile, break bulk, dry bulk, general cargo, liquid bulk oil, liquid bulk fertilizer, private marine contractor terminal, and proposed oil terminals. Other port related appraisals have included oil tank farms, a peak electrical generating facility, railroad facilities, general "benchmark" studies, remnant land, flood control, utility, and road rights of way, etc. Port appraisal studied have included both fair market value estimates as well as fair market rent studies. This firm has also prepared numerous partial acquisition appraisal studies, and acted as the principal appraisal firm for the Port of Long Beach for both the Gerald Desmond Bridge Project and the Pier B On-Dock Rail Support Facility. Other major port acquisition projects have included significant assignments on the Alameda Corridor Project, a 20-mile long rail cargo expressway extending from Downtown Los Angeles to the Ports of Los Angeles and Long Beach. The Alameda Corridor project involved over 100 appraisals for the primary rail corridor, Anaheim Bridge, Pacific Coast Highway Grade Separation, Navy Way Grade Separation, and related sub-projects.`,
-    imagePath: '/assets/backgroundbridge.png',
+    imagePath: '/assets/portappraisalspic.JPG',
   },
   {
     id: 'marina-appraisals',
     title: 'Marina Appraisals',
     content: `Various marina related appraisal studies have been conducted, primarily on leased land, for the City of Long Beach, Port of Los Angeles, County of Los Angeles Department of Beaches and Harbor (Marina del Rey), City of Newport Beach, City of Huntington Beach, the City of Oceanside, Port of San Diego, as well as other public agencies and private parties. Marina related studies have included boat slips, a live-aboard rent study, yacht clubs, restaurant and retail uses, low rise and high rise office buildings, medical offices, hotels, open space and park parcels, dryboat storage, boat repair yards, ship chandlery, fuel docks, parking structures, portions of the Aquarium of the Pacific in Long Beach, etc. Appraisal studies have also been conducted regarding the rental value of tidelands property, as well as adjacent upland properties. Further, certain marina related studies have involved complex leased fee and leasehold studies of both land and water areas, inclusive of proposed development and renovation projects, percentage rent, minimum rent, and other ground lease analyses.`,
-    imagePath: '/assets/backgroundbridge.png',
+    imagePath: '/assets/gallerymarina.png',
   },
   {
     id: 'airport-appraisals',
     title: 'Airport Appraisals',
     content: `Airport properties are typically appraised for the purpose of determining the fair market rental value of the underlying land and/or building improvements, as part of airport/tenant lease renewals and negotiations. The primary valuation methodologies utilized in determining the fair ma`,
-    imagePath: '/assets/backgroundbridge.png',
+    imagePath: '/assets/galleryplane.png',
   },
 ];
 
@@ -117,7 +111,7 @@ export default function ServicesPage() {
       <section className="hero-section">
         <div className="hero-section__image">
           <Image
-            src="/assets/gallerymarina.png"
+            src="/assets/assorted.JPG"
             alt="Services Header"
             fill
             style={{ objectFit: 'cover' }}
