@@ -8,23 +8,25 @@ import '../styles/account.css';
 import '../styles/contact.css'
 import './globals.css'
 
-import { ClerkProvider } from '@clerk/nextjs'
-import type { ReactNode } from 'react'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-export const metadata = {
-  title: "RP Laurain Next",
-  description: "Your site with Clerk authentication",
-}
+const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <ClerkProvider>
-      <html lang="en">
-        <body suppressHydrationWarning={true}>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
-  )
+export const metadata: Metadata = {
+  title: "R. P. Laurain & Associates",
+  description: "Professional real estate appraisal services",
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
+}
 
