@@ -6,6 +6,7 @@ import '../styles/home.css'
 import '../styles/auth.css'      // if you added auth.css
 import '../styles/account.css';
 import '../styles/contact.css'
+import './globals.css'
 
 import { ClerkProvider } from '@clerk/nextjs'
 import type { ReactNode } from 'react'

@@ -9,14 +9,22 @@ import '@/styles/admin.css';
 export default function AdminPage() {
   const { user } = useUser();   // you might later gate this to admins only
   const router = useRouter();
-  const [form, setForm] = useState({
+
+  type FormState = {  // Define the type for your form state
+    userId: string;
+    title: string;
+    date: string;
+    fileUrl: string;
+  };
+
+  const [form, setForm] = useState<FormState>({
     userId: '',
     title: '',
     date: '',
     fileUrl: '',
   });
 
-  async function onSubmit(e) {
+  async function onSubmit(e: React.FormEvent) { // Explicitly type the event object
     e.preventDefault();
     console.log('Admin form submit:', form);
 
@@ -46,22 +54,24 @@ export default function AdminPage() {
   }
 
   return (
-    <form className="admin-form" onSubmit={onSubmit}>
-      <h1>Upload Report Link</h1>
+    <div className="home-three">
+      <form className="admin-form" onSubmit={onSubmit}>
+        <h1>Upload Report Link</h1>
 
-      {['userId','title','date','fileUrl'].map((field) => (
-        <div key={field}>
-          <label htmlFor={field}>{field}</label><br/>
-          <input
-            id={field}
-            type={field === 'date' ? 'date' : 'text'}
-            value={form[field]}
-            onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-          />
-        </div>
-      ))}
+        {['userId','title','date','fileUrl'].map((field) => (
+          <div key={field} className="input-group">
+            <label htmlFor={field}>{field}</label><br/>
+            <input
+              id={field}
+              type={field === 'date' ? 'date' : 'text'}
+              value={form[field as keyof FormState]}
+              onChange={(e) => setForm({ ...form, [field]: e.target.value })}
+            />
+          </div>
+        ))}
 
-      <button type="submit">Save</button>
-    </form>
+        <button type="submit">Save</button>
+      </form>
+    </div>
   );
 }
