@@ -58,13 +58,17 @@ export default function ServicesCarousel() {
 
       <div className={styles.slideWrapper}>
         {slides.map((slide, i) => (
-          <img
-            key={i}
-            src={slide.src}
-            alt={slide.alt}
-            className={`${styles.slide} ${i === index ? styles.active : ''}`}
-            onClick={() => handleClick(slide.link)}
-          />
+          <div key={i} className={`${styles.slideContainer} ${i === index ? styles.active : ''}`}>
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              className={styles.slide}
+              onClick={() => handleClick(slide.link)}
+            />
+            <div className={styles.overlay}>
+              <span className={styles.overlayText}>{slide.alt}</span>
+            </div>
+          </div>
         ))}
       </div>
 

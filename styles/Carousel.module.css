@@ -1,5 +1,3 @@
-
-
 .carousel {
     position: relative;
     width: 100%;
@@ -18,13 +16,18 @@
     height: 100%;
   }
   
-  .slide {
+  .slideContainer {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     cursor: pointer;
   }
   
@@ -33,13 +36,33 @@
     z-index: 1;
   }
   
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlayText {
+    color: white;
+    font-size: 1.5rem;
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  
   .leftControl,
   .rightControl {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 6rem;
-    color: black;
+    color: white;
     background: none;
     border: none;
     font-weight: 900;
