@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
+import ServiceCarousel from '../components/ServiceCarousel';
 import '../../styles/services.css';
 import { useState } from 'react';
 
@@ -11,6 +12,7 @@ interface Service {
   title: string;
   content: string;
   imagePath: string;
+  carouselImages: string[];
 }
 
 const servicesData: Service[] = [
@@ -19,6 +21,11 @@ const servicesData: Service[] = [
     title: 'Residential Property',
     content: `Residential properties appraised include single family, condominiums, own-your-own, townhouse, low and medium density multiple family, 100+ unit apartment complexes, custom homes, beachfront homes, bayfront properties, boat docks, mobile home parks, single resident occupancy (SRO) developments, vacant single family lot and acreage parcels, residential subdivisions, multiple family residential land parcels, affordable housing sites, and entitled developments.`,
     imagePath: '/assets/residentialproperties.JPG',
+    carouselImages: [
+      '/assets/residentialproperties.JPG',
+      '/assets/assorted.JPG',
+      '/assets/content.JPG',
+    ],
   },
   {
     id: 'commercial-industrial',
@@ -27,12 +34,22 @@ const servicesData: Service[] = [
 
 Industrial property appraisals have included warehouses, light and heavy manufacturing, business parks, distribution and transit facilities, food processing, cold storage, lumber yards, recycling centers, open storage, port properties, airport properties, vacant land, properties encumbered with oil and water injection wells, sites with soil contamination, and land fill properties.`,
     imagePath: '/assets/industrial.JPG',
+    carouselImages: [
+      '/assets/industrial.JPG',
+      '/assets/gallerycommercial.png',
+      '/assets/content.JPG',
+    ],
   },
   {
     id: 'special-purpose',
     title: 'Special Purpose and Special Use Properties',
     content: `Appraisal services and valuation studies of public, quasi-public, special use, and non-profit facilities include, among others, seaport properties, airports, wetlands, tidelands, conservation land, river rights-of-way, reservoirs, utility and railroad corridors, flood control channels, San Onofre Nuclear facility, city hall buildings and civic center complexes, courthouses, libraries, fire and police stations, post offices, public parking structures, parks, public and private schools, adult learning centers, athletic facilities and gyms, bowling alleys, tennis centers, golf courses, playing fields, recreation sites, campgrounds, youth homes, after school facilities, daycare facilities, homeless shelters, hospitals, skilled nursing facilities, churches, meeting halls and lodges, and veteran facilities.`,
     imagePath: '/assets/specialpurposeprop.JPG',
+    carouselImages: [
+      '/assets/specialpurposeprop.JPG',
+      '/assets/specialpurposeprop2.JPG',
+      '/assets/content.JPG',
+    ],
   },
   {
     id: 'eminent-domain',
@@ -78,24 +95,44 @@ Industrial property appraisals have included warehouses, light and heavy manufac
     Inverse Condemnation
     Tenant Leasehold Studies`,
     imagePath: '/assets/emminent.JPG',
+    carouselImages: [
+      '/assets/emminent.JPG',
+      '/assets/bridgepic2.JPG',
+      '/assets/content.JPG',
+    ],
   },
   {
     id: 'port-appraisals',
     title: 'Port Appraisals',
     content: `For over 35 years, one of the areas of specialized expertise has included the appraisal of various international seaport and marine related properties, primarily along the West Coast, but involving port surveys across the United States. Appraisal studies of shipping industry terminal uses have included container, automobile, break bulk, dry bulk, general cargo, liquid bulk oil, liquid bulk fertilizer, private marine contractor terminal, and proposed oil terminals. Other port related appraisals have included oil tank farms, a peak electrical generating facility, railroad facilities, general "benchmark" studies, remnant land, flood control, utility, and road rights of way, etc. Port appraisal studied have included both fair market value estimates as well as fair market rent studies. This firm has also prepared numerous partial acquisition appraisal studies, and acted as the principal appraisal firm for the Port of Long Beach for both the Gerald Desmond Bridge Project and the Pier B On-Dock Rail Support Facility. Other major port acquisition projects have included significant assignments on the Alameda Corridor Project, a 20-mile long rail cargo expressway extending from Downtown Los Angeles to the Ports of Los Angeles and Long Beach. The Alameda Corridor project involved over 100 appraisals for the primary rail corridor, Anaheim Bridge, Pacific Coast Highway Grade Separation, Navy Way Grade Separation, and related sub-projects.`,
     imagePath: '/assets/portappraisalspic.JPG',
+    carouselImages: [
+      '/assets/portappraisalspic.JPG',
+      '/assets/bridgepic2.JPG',
+      '/assets/content.JPG',
+    ],
   },
   {
     id: 'marina-appraisals',
     title: 'Marina Appraisals',
     content: `Various marina related appraisal studies have been conducted, primarily on leased land, for the City of Long Beach, Port of Los Angeles, County of Los Angeles Department of Beaches and Harbor (Marina del Rey), City of Newport Beach, City of Huntington Beach, the City of Oceanside, Port of San Diego, as well as other public agencies and private parties. Marina related studies have included boat slips, a live-aboard rent study, yacht clubs, restaurant and retail uses, low rise and high rise office buildings, medical offices, hotels, open space and park parcels, dryboat storage, boat repair yards, ship chandlery, fuel docks, parking structures, portions of the Aquarium of the Pacific in Long Beach, etc. Appraisal studies have also been conducted regarding the rental value of tidelands property, as well as adjacent upland properties. Further, certain marina related studies have involved complex leased fee and leasehold studies of both land and water areas, inclusive of proposed development and renovation projects, percentage rent, minimum rent, and other ground lease analyses.`,
     imagePath: '/assets/gallerymarina.png',
+    carouselImages: [
+      '/assets/gallerymarina.png',
+      '/assets/content.JPG',
+      '/assets/assorted.JPG',
+    ],
   },
   {
     id: 'airport-appraisals',
     title: 'Airport Appraisals',
     content: `Airport properties are typically appraised for the purpose of determining the fair market rental value of the underlying land and/or building improvements, as part of airport/tenant lease renewals and negotiations. The primary valuation methodologies utilized in determining the fair ma`,
     imagePath: '/assets/galleryplane.png',
+    carouselImages: [
+      '/assets/galleryplane.png',
+      '/assets/galleryplane.JPEG',
+      '/assets/content.JPG',
+    ],
   },
 ];
 
@@ -212,6 +249,7 @@ export default function ServicesPage() {
               {openService === service.id && (
                 <div className="service-content-dropdown">
                   <p>{service.content}</p>
+                  <ServiceCarousel images={service.carouselImages} />
                 </div>
               )}
             </div>
