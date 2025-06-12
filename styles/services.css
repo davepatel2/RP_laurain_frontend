@@ -54,3 +54,108 @@
   font-size: 1rem;
   line-height: 1.4;
 }
+
+/* New styles for services-details-section */
+.services-details-section {
+  padding: 40px 20px;
+  background-color: var(--gray_900);
+  color: var(--white_a700);
+}
+
+.services-details-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-item-detail {
+  background-color: #d8d8d8;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-item-detail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.service-title-button {
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  color: var(--white_a700);
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-family: Verdana, sans-serif;
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+
+.service-title-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.service-content-dropdown {
+  padding: 20px;
+  background-color: rgba(42, 42, 42, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.service-content-dropdown p {
+  margin-bottom: 10px;
+}
+
+.service-content-dropdown p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .service-item-detail {
+    min-height: 150px;
+  }
+
+  .service-title-button {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .service-content-dropdown {
+    font-size: 16px;
+    padding: 15px;
+  }
+}

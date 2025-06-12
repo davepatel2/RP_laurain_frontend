@@ -17,6 +17,21 @@ const slides = [
     alt: 'Marina',
     link: '/services',
   },
+  {
+    src: '/assets/portappraisalspic.JPG',
+    alt: 'Port Appraisals',
+    link: '/services',
+  },
+  {
+    src: '/assets/residentialproperties.JPG',
+    alt: 'Residential Properties',
+    link: '/services',
+  },
+  {
+    src: '/assets/specialpurposeprop.JPG',
+    alt: 'Special Purpose Properties',
+    link: '/services',
+  },
 ];
 
 export default function ServicesCarousel() {

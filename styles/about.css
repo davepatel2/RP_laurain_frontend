@@ -1,0 +1,88 @@
+.about-section {
+  padding: 40px 20px;
+  background-color: var(--gray_900);
+  color: var(--white_a700);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-card h2 {
+  color: var(--white_a700);
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-family: Verdana, sans-serif;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.about-card p {
+  line-height: 1.8;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+}
+
+.about-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-card ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.about-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* Make the first two cards span full width */
+.company-overview,
+.our-expertise {
+  grid-column: 1 / -1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-card {
+    padding: 20px;
+  }
+  
+  .about-card h2 {
+    font-size: 28px;
+  }
+  
+  .about-card p,
+  .about-card ul li {
+    font-size: 18px;
+  }
+} 
