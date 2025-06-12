@@ -8,7 +8,7 @@
     padding-top: 22px;
     padding-bottom: 22px;
     width: 100%;
-  }
+}
   
   @media only screen and (max-width: 550px) {
     .home-three {
@@ -121,7 +121,7 @@
 
 /* "INCORPORATED" */
 .hero-section__incorporated {
-  font-family: Verdana, sans-serif;
+  font-family: "Times New Roman", serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 10px;
@@ -131,7 +131,7 @@
 
 /* "APPRAISERS - ANALYSTS - CONSULTANTS" */
 .hero-section__tagline {
-  font-family: Verdana, sans-serif;
+  font-family: "Times New Roman", serif;
   font-size: 25px;
   color: var(--white_a700);
   letter-spacing: 8px;
@@ -166,7 +166,7 @@
   overflow-x: auto;
 }
 
-/* Single service item (unchanged) */
+/* Single service item */
 .service-item {
   font-family: Verdana, sans-serif;
   display: flex;
@@ -295,6 +295,7 @@
   padding: 50px;
   letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.75);
+  font-family: "Times New Roman", serif;
 }
 
 .about-section__address-box {
@@ -320,12 +321,11 @@
   line-height: 59px;
   letter-spacing: 5px;
   font-size: 20px;
-  font-family: Verdana, sans-serif;
-  width: max-content; /* Change from fit-content to max-content */
+  font-family: "Times New Roman", serif;
+  width: max-content;
   white-space: nowrap;
   margin: 0 auto;
   display: inline-block;
-  /* Add padding to ensure consistent width */
   padding: 0 20px;
 }
 
@@ -371,8 +371,8 @@
 
 .client-overview__title {
   font-size: 45px;
-  font-family: Verdana, sans-serif;
-  margin-bottom: 40px; /* Add margin below title */
+  font-family: "Times New Roman", serif;
+  margin-bottom: 40px;
   @media (max-width: 1150px) {
     font-size: 30px;
   }
@@ -387,4 +387,9 @@
   @media (max-width: 1150px) {
     font-size: 20px;
   }
+}
+
+/* Add specific styles for the Navbar to maintain Verdana font */
+.hero-section__overlay nav {
+    font-family: Verdana, sans-serif;
 }
