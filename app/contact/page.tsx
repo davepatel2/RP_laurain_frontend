@@ -11,9 +11,9 @@ export default function ContactPage() {
 
       {/* ——— Hero section (unchanged) ——— */}
       <section className="hero-section">
-        <div className="hero-section__video">
+        <div className="hero-section__image">
           <Image
-            src="/assets/gallerymarina.png"
+            src="/assets/emminent.JPG"
             alt="Contact Header"
             fill
             style={{ objectFit: 'cover' }}
@@ -47,20 +47,38 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ——— Contact details below hero ——— */}
-      <section className="contact-section">
-        <div className="contact-details">
-          <p>3353 LINDEN AVENUE, SUITE 200</p>
-          <p>LONG BEACH, CALIFORNIA 90807</p>
-          <p>TELEPHONE: (562) 426-0477</p>
-          <p>FACSIMILE: (562) 988-2927</p>
-          <p>
-            EMAIL:&nbsp;
-            <a href="mailto:RPLA@RPLAURAIN.COM" className="contact-link">
-              RPLA@RPLAURAIN.COM
-            </a>
-          </p>
-          <p>HOURS: M-F 8 AM – 5 PM</p>
+      <section className="contact-section container-xs">
+        <div className="contact-container">
+          <div className="contact-card">
+            <h2 className="contact-title">Contact Us</h2>
+            <div className="contact-details">
+              <div className="contact-info">
+                <div className="contact-address">
+                  <h3>Office Location</h3>
+                  <p>3353 LINDEN AVENUE, SUITE 200</p>
+                  <p>LONG BEACH, CALIFORNIA 90807</p>
+                </div>
+                
+                <div className="contact-communication">
+                  <h3>Get in Touch</h3>
+                  <p>TELEPHONE: <a href="tel:+15624260477" className="contact-link">(562) 426-0477</a></p>
+                  <p>FACSIMILE: (562) 988-2927</p>
+                  <p>
+                    EMAIL:&nbsp;
+                    <a href="mailto:RPLA@RPLAURAIN.COM" className="contact-link">
+                      RPLA@RPLAURAIN.COM
+                    </a>
+                  </p>
+                </div>
+
+                <div className="contact-hours">
+                  <h3>Business Hours</h3>
+                  <p>Monday - Friday</p>
+                  <p>8:00 AM – 5:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

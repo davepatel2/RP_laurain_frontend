@@ -60,11 +60,13 @@
   padding: 40px 20px;
   background-color: var(--gray_900);
   color: var(--white_a700);
+  width: 100%;
 }
 
 .services-details-content {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .service-item-detail {
@@ -80,14 +82,21 @@
   min-height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(1.5); /* Make images brighter */
+}
+
+/* Specific style for airport image */
+.service-item-detail[style*="galleryplane.png"] {
+  background-position: center 70%; /* Move the preview lower for airport image */
 }
 
 .service-item-detail::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4); /* Reduced opacity for brighter overlay */
   border-radius: 12px;
 }
 
@@ -96,19 +105,19 @@
   padding: 20px;
   background-color: transparent;
   color: var(--white_a700);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   border: none;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
   font-family: Verdana, sans-serif;
   position: relative;
   z-index: 1;
-  margin-top: auto;
+  margin-top: 0;
 }
 
 .service-title-button:hover {
@@ -116,8 +125,9 @@
 }
 
 .dropdown-icon {
-  font-size: 20px;
+  font-size: 24px;
   transition: transform 0.3s ease;
+  margin-left: 10px;
 }
 
 .dropdown-icon.open {
@@ -125,19 +135,23 @@
 }
 
 .service-content-dropdown {
-  padding: 20px;
+  padding: 30px;
   background-color: rgba(42, 42, 42, 0.9);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 24px;
+  line-height: 1.8;
   white-space: pre-wrap;
   position: relative;
   z-index: 1;
+  width: 100%;
+  margin: 0;
 }
 
 .service-content-dropdown p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  padding: 0 20px;
 }
 
 .service-content-dropdown p:last-child {
@@ -150,12 +164,28 @@
   }
 
   .service-title-button {
-    font-size: 20px;
+    font-size: 24px;
     padding: 15px;
   }
 
+  .dropdown-icon {
+    font-size: 20px;
+  }
+
   .service-content-dropdown {
-    font-size: 16px;
-    padding: 15px;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .service-content-dropdown p {
+    padding: 0 10px;
+  }
+
+  .services-details-section {
+    padding: 20px 10px;
+  }
+
+  .services-details-content {
+    padding: 0 10px;
   }
 }

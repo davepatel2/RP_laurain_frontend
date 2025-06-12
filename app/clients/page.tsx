@@ -178,7 +178,7 @@ export default function ClientsPage() {
       <section className="hero-section">
         <div className="hero-section__image">
           <Image
-            src="/assets/backgroundbridge.png"
+            src="/assets/content.JPG"
             alt="Clients Header"
             fill
             style={{ objectFit: 'cover' }}

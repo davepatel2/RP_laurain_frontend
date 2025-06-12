@@ -18,7 +18,7 @@ const servicesData: Service[] = [
     id: 'residential',
     title: 'Residential Property',
     content: `Residential properties appraised include single family, condominiums, own-your-own, townhouse, low and medium density multiple family, 100+ unit apartment complexes, custom homes, beachfront homes, bayfront properties, boat docks, mobile home parks, single resident occupancy (SRO) developments, vacant single family lot and acreage parcels, residential subdivisions, multiple family residential land parcels, affordable housing sites, and entitled developments.`,
-    imagePath: '/assets/backgroundbridge.png',
+    imagePath: '/assets/residentialproperties.JPG',
   },
   {
     id: 'commercial-industrial',
@@ -26,13 +26,13 @@ const servicesData: Service[] = [
     content: `Commercial property appraisal studies have included single and multi-tenant retail, strip centers, shopping centers, low-rise and high-rise office buildings, medical offices, restaurants and fast-food developments, nightclubs, convenience stores, theaters, parking garages, automobile repair and service facilities, service stations, self-storage facilities, truck fueling and washing stations, car wash facilities, automobile sales, mixed-use properties, hotel and motel properties, various marina developments, and vacant land.
 
 Industrial property appraisals have included warehouses, light and heavy manufacturing, business parks, distribution and transit facilities, food processing, cold storage, lumber yards, recycling centers, open storage, port properties, airport properties, vacant land, properties encumbered with oil and water injection wells, sites with soil contamination, and land fill properties.`,
-    imagePath: '/assets/backgroundbridge.png',
+    imagePath: '/assets/industrial.JPG',
   },
   {
     id: 'special-purpose',
     title: 'Special Purpose and Special Use Properties',
     content: `Appraisal services and valuation studies of public, quasi-public, special use, and non-profit facilities include, among others, seaport properties, airports, wetlands, tidelands, conservation land, river rights-of-way, reservoirs, utility and railroad corridors, flood control channels, San Onofre Nuclear facility, city hall buildings and civic center complexes, courthouses, libraries, fire and police stations, post offices, public parking structures, parks, public and private schools, adult learning centers, athletic facilities and gyms, bowling alleys, tennis centers, golf courses, playing fields, recreation sites, campgrounds, youth homes, after school facilities, daycare facilities, homeless shelters, hospitals, skilled nursing facilities, churches, meeting halls and lodges, and veteran facilities.`,
-    imagePath: '/assets/backgroundbridge.png',
+    imagePath: '/assets/specialpurposeprop.JPG',
   },
   {
     id: 'eminent-domain',
@@ -77,7 +77,7 @@ Industrial property appraisals have included warehouses, light and heavy manufac
     Conservation and Mitigation Land Exchanges
     Inverse Condemnation
     Tenant Leasehold Studies`,
-    imagePath: '/assets/backgroundbridge.png',
+    imagePath: '/assets/emminent.JPG',
   },
   {
     id: 'port-appraisals',
@@ -111,7 +111,7 @@ export default function ServicesPage() {
       <section className="hero-section">
         <div className="hero-section__image">
           <Image
-            src="/assets/assorted.JPG"
+            src="/assets/gallerymarina.png"
             alt="Services Header"
             fill
             style={{ objectFit: 'cover' }}
@@ -191,11 +191,10 @@ export default function ServicesPage() {
                 <li>Economic Feasibility Studies</li>
                 </ul>
             </div>
-            </div>
-
+        </div>
       </section>
 
-      <section className="services-details-section container-xs">
+      <section className="services-details-section">
         <div className="services-details-content">
           {servicesData.map((service) => (
             <div 
